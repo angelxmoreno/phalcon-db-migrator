@@ -7,3 +7,4 @@ $loader->registerDirs(
     )
 );
 $loader->register();
+require_once __DIR__ . '/../../vendor/autoload.php';
