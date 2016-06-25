@@ -2,7 +2,7 @@
 
 use Phalcon\Di\FactoryDefault\Cli as CliDi;
 use Phalcon\Cli\Console as ConsoleApp;
-
+use Phalcon\Config as PhalconConfig;
 /**
  * Read auto-loader
  */
@@ -11,7 +11,8 @@ include __DIR__ . '/config/loader.php';
 /**
  * Read the configuration
  */
-$config = include __DIR__ . '/config/config.php';
+$config_array = include __DIR__ . '/config/config.php';
+$config = new PhalconConfig($config_array);
 
 /**
  * Read the services
