@@ -1,0 +1,12 @@
+{
+    "name": "amoreno/migrator",
+    "description": "A Phalcon CLI app for migrating database schemas and data from one PDO to another.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Angel S. Moreno",
+            "email": "angelxmoreno@gmail.com"
+        }
+    ],
+    "require": {}
+}
