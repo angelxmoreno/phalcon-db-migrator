@@ -3,22 +3,28 @@
 use Phalcon\Di\FactoryDefault\Cli as CliDi;
 use Phalcon\Cli\Console as ConsoleApp;
 use Phalcon\Config as PhalconConfig;
+
+/**
+ * Read Constants
+ */
+include CONFIG_DIR . DS . 'constants.php';
+
 /**
  * Read auto-loader
  */
-include __DIR__ . '/config/loader.php';
+include CONFIG_DIR . DS . 'loader.php';
 
 /**
  * Read the configuration
  */
-$config_array = include __DIR__ . '/config/config.php';
+$config_array = include CONFIG_DIR . DS . 'config.php';
 $config = new PhalconConfig($config_array);
 
 /**
  * Read the services
  */
 $di = new CliDi();
-include __DIR__ . '/config/services.php';
+include CONFIG_DIR . DS . 'services.php';
 
 /**
  * Create a console application
@@ -59,7 +65,6 @@ try {
     if (isset($config["printNewLine"]) && $config["printNewLine"]) {
         echo PHP_EOL;
     }
-
 } catch (Exception $e) {
     echo $e->getMessage() . PHP_EOL;
     echo implode(PHP_EOL, $e->getTrace());

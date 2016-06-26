@@ -3,7 +3,7 @@
 $loader = new \Phalcon\Loader();
 $loader->registerDirs(
     [
-        __DIR__ . '/../tasks'
+        TASKS_DIR
     ]
 );
 $loader->register();
