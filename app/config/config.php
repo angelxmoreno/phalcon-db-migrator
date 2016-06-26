@@ -11,5 +11,8 @@ return [
      *
      * You can disable this behaviour if the output of your application needs to don't have a new line at end
      */
-    'printNewLine' => true
+    'printNewLine' => true,
+    'logger' => [
+        'path' => APP_DIR . DS . 'logs'
+    ]
 ];

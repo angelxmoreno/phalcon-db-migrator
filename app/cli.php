@@ -66,7 +66,10 @@ try {
         echo PHP_EOL;
     }
 } catch (Exception $e) {
-    echo $e->getMessage() . PHP_EOL;
-    echo implode(PHP_EOL, $e->getTrace());
+    echo 'App Error: ' . $e->getMessage() . PHP_EOL;
+    echo $e->getTraceAsString() . PHP_EOL;
+    $err=[$e->getMessage()];
+    $err += explode(PHP_EOL, $e->getTraceAsString());
+    $di->getShared('logger')->error(implode('||', $err));
     exit(255);
 }

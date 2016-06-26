@@ -1,11 +1,12 @@
 <?php
-/**
- * Local variables
- *
- * @var \Phalcon\Config $config
- * @var \Phalcon\Di\FactoryDefault\Cli $di
- */
+
+use Phalcon\Logger\Adapter\File\Multiple as LoggerAdapter;
 
 $di->setShared('config', function () use ($config) {
     return $config;
 });
+
+$di->setShared('logger', function () use ($config) {
+    return new LoggerAdapter($config->logger->path);
+});
+
