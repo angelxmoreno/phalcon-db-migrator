@@ -7,7 +7,7 @@ use Phalcon\Config as PhalconConfig;
 /**
  * Read Constants
  */
-include CONFIG_DIR . DS . 'constants.php';
+include __DIR__ . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'constants.php';
 
 /**
  * Read auto-loader
